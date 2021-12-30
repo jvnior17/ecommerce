@@ -4,10 +4,15 @@ import React from "react";
 import styled from "styled-components";
 import { mobile } from "../responsive";
 import { Link } from "react-router-dom";
+import { Button } from "../components/Button";
 
 const Container = styled.div`
   height: 70px;
   ${mobile({ height: "50px" })}
+  a {
+    text-decoration: none;
+    color: black;
+  }
 `;
 
 const Wrapper = styled.div`
@@ -86,18 +91,30 @@ const Navbar = () => {
           </SearchContainer>
         </Left>
         <Center>
-          <Logo>MUSE.</Logo>
+          <Link to="/">
+            <Logo>MUSE.</Logo>
+          </Link>
         </Center>
         <Right>
-          <Link to="/register">
-            <MenuItem>REGISTER</MenuItem>
-          </Link>
-          <MenuItem>SIGN IN</MenuItem>
-          <MenuItem>
-            <Badge badgeContent={4} color="secondary">
-              <ShoppingCartOutlined />
-            </Badge>
-          </MenuItem>
+          <a>
+            <Link to="/register">
+              <MenuItem>REGISTER</MenuItem>
+            </Link>
+          </a>
+          <a>
+            <Link to="/login">
+              <MenuItem>SIGN IN</MenuItem>
+            </Link>
+          </a>
+          <a>
+            <Link to="/cart">
+              <MenuItem>
+                <Badge badgeContent={4} color="secondary">
+                  <ShoppingCartOutlined />
+                </Badge>
+              </MenuItem>
+            </Link>
+          </a>
         </Right>
       </Wrapper>
     </Container>

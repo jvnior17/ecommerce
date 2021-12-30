@@ -1,9 +1,10 @@
 import { ArrowLeftOutlined, ArrowRightOutlined } from "@material-ui/icons";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { sliderItems } from "../data";
 import { mobile } from "../responsive";
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 const Container = styled.div`
   width: 100%;
@@ -73,7 +74,7 @@ const Desc = styled.p`
   letter-spacing: 3px;
 `;
 
-const Button = styled.button`
+const ButtonStyled = styled.button`
   padding: 10px;
   font-size: 20px;
   color: white;
@@ -97,6 +98,9 @@ const Slider = () => {
       setSlideIndex(slideIndex < 2 ? slideIndex + 1 : 0);
     }
   };
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <Container>
@@ -112,7 +116,9 @@ const Slider = () => {
             <InfoContainer>
               <Title>{item.title}</Title>
               <Desc>{item.desc}</Desc>
-              <Button>SHOW NOW</Button>
+              <Link to="/productList">
+                <ButtonStyled>SHOW NOW</ButtonStyled>
+              </Link>
             </InfoContainer>
           </Slide>
         ))}
