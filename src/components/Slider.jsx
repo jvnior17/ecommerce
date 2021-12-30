@@ -3,7 +3,7 @@ import { useState } from "react";
 import styled from "styled-components";
 import { sliderItems } from "../data";
 import { mobile } from "../responsive";
-import React, { Component }  from 'react';
+import React, { Component } from "react";
 
 const Container = styled.div`
   width: 100%;
@@ -64,7 +64,6 @@ const InfoContainer = styled.div`
 
 const Title = styled.h1`
   font-size: 50px;
-  
 `;
 
 const Desc = styled.p`
@@ -72,21 +71,21 @@ const Desc = styled.p`
   font-size: 20px;
   font-weight: 500;
   letter-spacing: 3px;
-  
 `;
 
 const Button = styled.button`
   padding: 10px;
   font-size: 20px;
   color: white;
-  font weight: bold;
+  font-weight: bold;
   background-color: black;
   cursor: pointer;
   border-radius: 10%;
+  transition: 0.2s ease-in-out;
   :hover {
     background-color: white;
-    color: #696969;  
-}
+    color: #696969;
+  }
 `;
 
 const Slider = () => {
